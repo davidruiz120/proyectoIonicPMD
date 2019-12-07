@@ -43,11 +43,12 @@ export class TodosService {
     });
   }
 
+  /**
   readTODO_race(timer:number=10000):Observable<firebase.firestore.QuerySnapshot>{
     let o1 = this.myCollection.get();
     let o2 = interval(timer).pipe(mapTo(null));
     return race(o1, o2);
-  }
+  }*/
 
   readTODOByID(id:string):Observable<firebase.firestore.DocumentSnapshot>{
     return this.myCollection.doc(id).get();
