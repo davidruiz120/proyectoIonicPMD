@@ -13,6 +13,8 @@ import { LoadingController, ToastController } from '@ionic/angular';
 export class Tab1Page {
 
   public todoForm: FormGroup;
+  public icon_confirm:string = '<ion-icon name="checkmark"></ion-icon>';
+  public icon_info:string = '<ion-icon name="information-circle"></ion-icon>';
 
   constructor(private formBuilder:FormBuilder, private todoS:TodosService, public loadingController: LoadingController,
               public toastController: ToastController ) {
@@ -36,10 +38,10 @@ export class Tab1Page {
     this.todoS.addTODO(data)
     .then((ok)=>{
       this.todoForm.reset();
-      this.presentToast("Nota agregada", 'success');
+      this.presentToast("Nota agregada", this.icon_confirm, 'success');
     })
     .catch((err)=>{
-      this.presentToast("Error", 'danger', 4000);
+      this.presentToast("Error al agregar la nota", this.icon_info, 'danger', 4000);
     })
     .finally(()=>{
       this.loadingController.dismiss();
@@ -53,9 +55,9 @@ export class Tab1Page {
     await loading.present();
   }
 
-  async presentToast(msg:string, col:string, dur:number=2000) {
+  async presentToast(msg:string, icn:string, col:string, dur:number=2000) {
     const toast = await this.toastController.create({
-      message: msg,
+      message: icn + ' ' + msg,
       duration: dur,
       color: col
     });
