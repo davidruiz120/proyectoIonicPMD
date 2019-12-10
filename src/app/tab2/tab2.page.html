@@ -6,7 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-searchbar showCancelButton="focus" placeholder="Buscar"></ion-searchbar>
+
 <ion-content>
+
+  
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
@@ -17,7 +21,7 @@
     </ion-refresher-content>
   </ion-refresher>
 
-  <ion-searchbar showCancelButton="focus" placeholder="Buscar"></ion-searchbar>
+  
 
   <ion-list #dynamicList id="dynamicList">
     <ion-item-sliding *ngFor="let item of listadoPanel;let i = index">
