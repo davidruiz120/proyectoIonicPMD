@@ -29,6 +29,10 @@ export class Tab2Page {
     //this.refrescar();
   }
 
+  public buscar(event){
+    console.log(event);
+  }
+
   public borrarNota(id:string){
     console.log("Borrando...");
     this.todoS.deleteTODO(id).then((salida)=>{
@@ -97,8 +101,8 @@ export class Tab2Page {
 
   }
 
-  private refrescar(){
-    this.presentLoading();
+  private async refrescar(){
+    await this.presentLoading();
     try {
       this.todoS.readTODO2().subscribe((lista)=>{
         this.listadoPanel = lista;
