@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Nativo
+      Nativo y HttpClient
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,5 +12,16 @@
     <ion-toggle [checked]="checkToggle" (ionChange)="activar()" color="primary"></ion-toggle>
     <ion-label>Activar linterna</ion-label>
   </ion-item>
+
+  <ion-item class="ion-margin-top">
+    <ion-label>Lista de HttpClient</ion-label>
+  </ion-item>
+  
+  <ion-list>
+    <ion-item *ngFor="let item of listaHttp">
+      {{ item.title }}
+    </ion-item>
+  </ion-list>
+
 
 </ion-content>

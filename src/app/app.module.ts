@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import {AngularFireModule } from 'angularfire2';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import {AngularFireModule } from 'angularfire2';
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,4 @@
+import { TestService } from './../servicios/test.service';
 import { Component } from '@angular/core';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
 
@@ -10,9 +11,16 @@ export class Tab3Page {
   
   public checkToggle:boolean;
 
-  constructor(private flashlight: Flashlight) {}
+  public listaHttp: any[] = [];
+
+  constructor(private flashlight: Flashlight, private testService: TestService) {}
 
   ngOnInit(){
+
+    this.testService.getArrayDatos().subscribe((lista)=>{
+      this.listaHttp = lista;
+    })
+
     this.checkToggle = false;
   }
 
