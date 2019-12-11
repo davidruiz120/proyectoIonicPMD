@@ -1,3 +1,4 @@
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 import { PipesModule } from './pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
@@ -30,7 +31,8 @@ import {AngularFireModule } from 'angularfire2';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Flashlight
   ],
   bootstrap: [AppComponent]
 })

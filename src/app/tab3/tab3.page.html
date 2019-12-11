@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Nativo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-item>
+    <ion-toggle [checked]="checkToggle" (ionChange)="activar()" color="primary"></ion-toggle>
+    <ion-label>Activar linterna</ion-label>
+  </ion-item>
+
+</ion-content>
