@@ -14,6 +14,7 @@ export class Tab2Page {
 
   public listadoPanel;
   public listado$; // El $ indica que es un observable por los programadores
+  public textoaBuscar:string = '';
   public icon_confirm:string = '<ion-icon name="checkmark"></ion-icon>';
   public icon_info:string = '<ion-icon name="information-circle"></ion-icon>';
 
@@ -29,8 +30,9 @@ export class Tab2Page {
     //this.refrescar();
   }
 
-  public buscar(event){
-    console.log(event);
+  public buscar(e){
+    //console.log(e);
+    this.textoaBuscar = e.detail.value; // Obtengo el valor del SeachBar
   }
 
   public borrarNota(id:string){

@@ -1,3 +1,4 @@
+import { PipesModule } from './../pipes/pipes.module';
 import { ModaleditarPageModule } from './../modal/modaleditar/modaleditar.module';
 import { ModaleditarPage } from './../modal/modaleditar/modaleditar.page';
 import { IonicModule } from '@ionic/angular';
@@ -16,7 +17,8 @@ import { Tab2Page } from './tab2.page';
     CommonModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }]),
-    ModaleditarPageModule
+    ModaleditarPageModule,
+    PipesModule
   ],
   declarations: [Tab2Page]
 })

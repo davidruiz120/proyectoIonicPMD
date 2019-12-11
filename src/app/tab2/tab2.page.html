@@ -1,12 +1,12 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>
       Listado
     </ion-title>
   </ion-toolbar>
+  <ion-searchbar showCancelButton="focus" placeholder="Buscar por titulo" (ionChange)="buscar($event)"></ion-searchbar>
 </ion-header>
 
-<ion-searchbar showCancelButton="focus" placeholder="Buscar"></ion-searchbar>
 
 <ion-content>
 
@@ -24,7 +24,7 @@
   
 
   <ion-list #dynamicList id="dynamicList">
-    <ion-item-sliding *ngFor="let item of listadoPanel;let i = index">
+    <ion-item-sliding *ngFor="let item of listadoPanel | filtro: textoaBuscar">
       <ion-item>
         <ion-label><h2>{{item.title}}</h2><p>{{item.description}}</p></ion-label>
       </ion-item>

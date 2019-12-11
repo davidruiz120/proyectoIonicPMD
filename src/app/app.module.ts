@@ -1,3 +1,4 @@
+import { PipesModule } from './pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,9 @@ import {AngularFireModule } from 'angularfire2';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+    PipesModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
