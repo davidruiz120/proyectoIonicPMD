@@ -1,4 +1,5 @@
 import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Vibration } from  '@ionic-native/vibration/ngx';
 import { PipesModule } from './pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Flashlight
+    Flashlight,
+    Vibration
   ],
   bootstrap: [AppComponent]
 })

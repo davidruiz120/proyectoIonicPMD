@@ -1,6 +1,7 @@
 import { TestService } from './../servicios/test.service';
 import { Component } from '@angular/core';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
 
 @Component({
   selector: 'app-tab3',
@@ -13,7 +14,7 @@ export class Tab3Page {
 
   public listaHttp: any[] = [];
 
-  constructor(private flashlight: Flashlight, private testService: TestService) {}
+  constructor(private flashlight: Flashlight, private testService: TestService, private vibration: Vibration) {}
 
   ngOnInit(){
 
@@ -22,6 +23,10 @@ export class Tab3Page {
     })
 
     this.checkToggle = false;
+  }
+
+  vibrar(){
+    this.vibration.vibrate(1000);
   }
 
   activar(){

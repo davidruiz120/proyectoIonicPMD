@@ -98,7 +98,7 @@ export class Tab2Page {
       })
 
     }).catch((error)=>{
-      console.log("Error en el Promise al editar una nota en modal");
+      console.log("Salida del modal sin cambios");
     });
 
   }
