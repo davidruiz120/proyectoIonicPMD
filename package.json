@@ -27,6 +27,7 @@
     "@ionic/angular": "^4.7.1",
     "angularfire2": "^5.2.3",
     "cordova-android": "^8.1.0",
+    "cordova-browser": "6.0.0",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-flashlight": "^3.2.0",
     "cordova-plugin-vibration": "^3.1.1",
@@ -83,7 +84,8 @@
       "cordova-plugin-vibration": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }
