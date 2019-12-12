@@ -1,3 +1,4 @@
+import { LoadingController } from '@ionic/angular';
 import { TestService } from './../servicios/test.service';
 import { Component } from '@angular/core';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
@@ -14,15 +15,21 @@ export class Tab3Page {
 
   public listaHttp: any[] = [];
 
-  constructor(private flashlight: Flashlight, private testService: TestService, private vibration: Vibration) {}
+  constructor(private flashlight: Flashlight, private testService: TestService, private vibration: Vibration,
+            private loadingController: LoadingController) {}
 
-  ngOnInit(){
-
-    this.testService.getArrayDatos().subscribe((lista)=>{
-      this.listaHttp = lista;
-    })
-
-    this.checkToggle = false;
+  async ngOnInit(){
+    await this.presentLoading();
+    try {
+      this.testService.getArrayDatos().subscribe((lista)=>{
+        this.listaHttp = lista;
+      })
+      this.checkToggle = false;
+      this.loadingController.dismiss();
+    } catch(err){
+      this.loadingController.dismiss();
+    }
+    
   }
 
   vibrar(){
@@ -41,6 +48,14 @@ export class Tab3Page {
     } else {
       this.flashlight.switchOff();
     }
+  }
+
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Cargando'
+    });
+    await loading.present();
   }
 
 
